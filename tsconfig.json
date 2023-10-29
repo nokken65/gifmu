@@ -1,0 +1,12 @@
+{
+  "extends": "@nokken65/ts-config/react",
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
