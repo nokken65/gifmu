@@ -18,7 +18,12 @@ const _GifPreview = ({ images, slug }: GifPreviewProps) => {
   })
 
   return (
-    <div className={wrapper}>
+    <div
+      className={wrapper}
+      style={{
+        aspectRatio: `${images?.original?.width} / ${images?.original?.height}`
+      }}
+    >
       {inView && (
         <picture onLoad={() => setIsLoading(false)}>
           <source
@@ -53,7 +58,6 @@ const _GifPreview = ({ images, slug }: GifPreviewProps) => {
         <Skeleton
           ref={wrapperRef}
           className={skeleton}
-          height={images?.downsized?.height}
         />
       )}
     </div>
